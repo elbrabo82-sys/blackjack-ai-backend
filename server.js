@@ -22,7 +22,7 @@ app.get("/health", (req, res) => {
 
 app.get("/auth/ctrader", (req, res) => {
   const clientId = process.env.CTRADER_CLIENT_ID;
-
+console.log("CTRADER_CLIENT_ID existe:", !!clientId);
   if (!clientId) {
     return res.status(500).json({
       error: "CTRADER_CLIENT_ID não configurado"
